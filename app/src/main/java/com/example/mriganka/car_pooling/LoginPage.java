@@ -1,9 +1,15 @@
 package com.example.mriganka.car_pooling;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class LoginPage extends ActionBarActivity {
@@ -35,5 +41,29 @@ public class LoginPage extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void signIn(View view){
+        EditText un = (EditText)findViewById(R.id.etUserName);
+        EditText pw = (EditText)findViewById(R.id.etPass);
+        String username = un.getText().toString();
+        String pass = pw.getText().toString();
+        System.out.println(username);
+        System.out.println(pass);
+        if(username.equals("admin") && pass.equals("admin"))
+        {
+          System.out.println("inside if");
+            Intent intent = new Intent(this, HomePage.class);
+            startActivity(intent);
+        }
+        else
+        {
+            Context context = getApplicationContext();
+            CharSequence text = "Invalid Username or Password";
+            int duration = Toast.LENGTH_LONG;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.setGravity(Gravity.CENTER| Gravity.CENTER, 0, 0);
+            toast.show();
+        }
     }
 }
