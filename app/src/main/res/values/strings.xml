@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="find">Lets find you a ride baby...!!!</string>
+    <string name="offer">Help someone today!</string>
+
+    <string name="title_activity_find_ride"></string>
+    <string name="title_activity_offer_ride"></string>
 </resources>
